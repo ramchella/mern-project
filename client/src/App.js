@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 import Student from './components/showStudent/showStudent.js';
 import Create from './components/createStudent/createStudent.js';
+import Display from './components/labelDisplay/labelDisplay.js';
+
 import './App.css';
 import useStyles from './styles';
 
@@ -18,11 +20,15 @@ function App() {
 
         <Grow in> 
         <Grid container alignItems="stretch">
-          <Grid item xs={12} sm={7}>
+        <Grid item sm={2}>
+            <AppBar className={classes.appBar} position="static" color="inherit"></AppBar>
+            <Display/>
+          </Grid>
+          <Grid item xs={4} sm={8}>
             <AppBar className={classes.appBar} position="static" color="inherit"></AppBar>
             <Student/>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={2} sm={2}>
             <AppBar className={classes.appBar} position="static" color="inherit"></AppBar>
             <Create />
           </Grid>

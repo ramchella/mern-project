@@ -19,6 +19,7 @@ const useStyles = makeStyles({
 
 export default function ShowStudents() {
     const classes = useStyles();
+    
     const [studentsList,setStudentList] = useState([]);
 
     useEffect(()=>{
@@ -30,8 +31,8 @@ export default function ShowStudents() {
   return (
       <>
       <h2>All Students</h2>
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="simple table">
+    <TableContainer>
+      <Table>
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>
@@ -44,15 +45,11 @@ export default function ShowStudents() {
         <TableBody>
           {studentsList.map((student,key) => (
             <TableRow key={key}>
-              <TableCell component="th" scope="row">
-                {student.studentName}
-              </TableCell>
+              <TableCell align="left">{student.studentName}</TableCell>
               <TableCell align="right">{student.regNo}</TableCell>
               <TableCell align="right">{student.grade}</TableCell>
               <TableCell align="right">{student.section}</TableCell>
               <TableCell align="right">
-
-                
               </TableCell>
             </TableRow>
           ))}
